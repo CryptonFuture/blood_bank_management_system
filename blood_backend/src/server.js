@@ -20,7 +20,7 @@ app.use('/api/donations', require('./routes/donations'));
 app.use('/api/requests', require('./routes/requests'));
 app.use('/api/donors', require('./routes/donors'));
 
-app.get('/api/health', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ status: 'OK', service: 'Blood Bank API', timestamp: new Date() });
 });
 
