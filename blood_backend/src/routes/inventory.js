@@ -27,7 +27,7 @@ router.get('/', protect, async (req, res) => {
     let analytics = null;
     try {
       const pyRes = await axios.post(
-        `${process.env.PYTHON_SERVICE_URL || 'http://localhost:8000'}/analytics`,
+        `${process.env.PYTHON_SERVICE_URL}/analytics`,
         { inventory: inventory.map(i => ({ bloodGroup: i.bloodGroup, units: i.units })) },
         { timeout: 3000 }
       );
